@@ -5,6 +5,10 @@ font-family: 'Cabin', sans-serif;
 font-family: 'Herr Von Muellerhoff', cursive;
 */
 
+:root {
+    --brand-color: #C59D5F;
+}
+
 body {
     margin: 0;
     font-family: 'Cabin', sans-serif;
@@ -30,21 +34,50 @@ header {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 .header-logo {
     text-transform: uppercase;
     font-size: 24px;
     letter-spacing: 2px;
-    cursor: pointer;
 }
 
-nav a {
+.nav-icon {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    transition: .5s;
+}
+
+.nav-icon-rotate {
+    transform: rotate(90deg);
+}
+
+.nav-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+
+.nav-icon span:nth-child(2) {
+    margin: 5px 0;
+}
+
+.nav-menu a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     margin: 0 25px;
     font-size: 14px;
+}
+
+.nav-menu a:hover, .fab:hover {
+    color: var(--brand-color);
+    transition: .4s;
 }
 
 .header-social-icons {
@@ -68,8 +101,72 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #C59D5F;
-    font-family: 'Herr Von Muellerhoff', cursive;
-    font-size: 120px;
+    text-align: center;
 }
 
+.main-cover-wrap h1 {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color: var(--brand-color);
+    font-size: 120px;
+    font-weight: 100;
+    line-height: 50px;
+}
+
+.main-cover-wrap h1 span {
+    display: block;
+    font-family: 'Cabin', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 7px;
+}
+
+/* .arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right:10px solid blue; 
+  } */
+
+@media screen and (max-width: 800px) {
+
+    .header-wrap {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 10vh;
+        background: black;
+        height: 100vh;
+        text-align: center;
+        display: none;
+    }
+
+    .header-logo {
+        color: var(--brand-color)
+    }
+
+    .nav-icon {
+        display: block;
+    }
+
+    nav {
+        margin: 10vh 0;
+    }
+
+    .nav-menu a {
+       display: block;
+       font-size: 20px;
+       margin: 10px 0;
+    }
+
+    .header-social-icons {
+        font-size: 25px;
+        color: var(--brand-color)
+    }
+
+    .header-social-icons i:hover {
+        color: white;
+    }
+
+}
