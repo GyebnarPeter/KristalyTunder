@@ -22,19 +22,34 @@ header {
     color: white;
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 
 .header-wrap {
     width: 100%;
     max-width: 1920px;
-    height: 60px;
-    margin: 12px;
-    padding: 0 50px;
+    height: 70px;
+    padding: 12px 50px 12px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     position: relative;
+}
+
+.header-background {
+    animation-name: header-background;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes header-background {
+    from {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+        background-color: rgba(255, 255, 255, 1);
+    }
 }
 
 .header-logo {
@@ -86,7 +101,7 @@ header {
 }
 
 .main-cover {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     padding: 12px;
     box-sizing: border-box;
@@ -102,6 +117,8 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    position: relative;
 }
 
 .main-cover-wrap h1 {
@@ -110,6 +127,9 @@ header {
     font-size: 120px;
     font-weight: 100;
     line-height: 50px;
+    margin: 0 0 0 5px;
+    opacity: 0;
+    transition: 1s;
 }
 
 .main-cover-wrap h1 span {
@@ -122,13 +142,112 @@ header {
     letter-spacing: 7px;
 }
 
-/* .arrow-left {
-    width: 0; 
-    height: 0; 
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; 
-    border-right:10px solid blue; 
-  } */
+.cover-text-underline {
+    height: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 12px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.cover-text-underline .left-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #ffffff;
+    display: inline-block;
+    position: absolute;
+}
+
+.cover-text-underline .left-line {
+    width: 200px;
+    height: 2px;
+    background: white;
+}
+
+.cover-text-underline .right-line {
+    width: 200px;
+    height: 2px;
+    background: white;
+}
+
+.cover-text-underline .right-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #ffffff transparent transparent;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cover-text-underline .star {
+    margin: -1px 10px 0 10px;
+}
+
+.main-cover-wrap h4 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 3px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.main-cover-wrap button {
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: .5s;
+    opacity: 0;
+    transition: 1s;
+}
+
+.main-cover-wrap button:hover {
+    background: var(--brand-color);
+}
+
+.cover-arrow-bg {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    margin-left: -96px;
+}
+
+.main-cover-wrap i {
+    position: absolute;
+    z-index: 100;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -7px;
+    font-size: 20px;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.main-cover-wrap i:hover {
+    color: var(--brand-color);
+}
+
+.cover-text-underline {
+    color: var(--brand-color);
+}
+
+main {
+    width: 100%;
+    height: 1000px;
+}
+
 
 @media screen and (max-width: 800px) {
 
@@ -136,6 +255,7 @@ header {
         flex-direction: column;
         justify-content: center;
         padding-top: 10vh;
+        margin: 0;
         background: black;
         height: 100vh;
         text-align: center;
@@ -167,6 +287,27 @@ header {
 
     .header-social-icons i:hover {
         color: white;
+    }
+
+    .main-cover {
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .cover-text-underline .left-line,
+    .cover-text-underline .right-line {
+        width: 100px;
+    }
+
+    .main-cover-wrap h1 {
+        font-size: 80px;
+    }
+
+    .main-cover-wrap h1 span {
+        font-size: 30px; 
     }
 
 }
