@@ -65,3 +65,21 @@ let coverAnimation = () => {
 }
 
 coverAnimation();
+
+
+//RECIPE PART ANIMATION
+let recipe = document.querySelector(".recipes");
+let recipesPosition = document.querySelector(".recipes").offsetTop;
+let recipesFirstHead = document.querySelector(".recipes h1");
+let recipesSecondHead = document.querySelector(".recipes h2");
+
+recipe.onwheel = () => {
+    if (document.documentElement.scrollTop > recipesPosition-300) {
+        recipesFirstHead.style.opacity = 1;
+        setTimeout(() => {
+            recipesSecondHead.style.opacity = 1;
+        }, 1000);
+    }
+}
+
+
