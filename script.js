@@ -13,10 +13,9 @@ $(".nav-icon").click(() => {
 });
 
 
-//NAVIGATION SCROLL
-let navi = document.querySelectorAll("nav a");
-
 window.onscroll = () => {
+    //NAVIGATION SCROLL
+    let navi = document.querySelectorAll("nav a");
 
     if (document.documentElement.scrollTop > 100) {
 
@@ -35,7 +34,32 @@ window.onscroll = () => {
         for (let i = 0; i < navi.length; ++i) {
             navi[i].style.color = "white";
         }
-    }      
+    }
+
+    //RECIPE PART ANIMATION
+    let recipesPosition = document.querySelector(".recipes").offsetTop;
+    let recipesFirstHead = document.querySelector(".recipes h1");
+    let recipesSecondHead = document.querySelector(".recipes h2");
+
+    if (document.documentElement.scrollTop > recipesPosition-300) {
+        recipesFirstHead.style.opacity = 1;
+        setTimeout(() => {
+            recipesSecondHead.style.opacity = 1;
+        }, 1000);
+    }
+
+    //BLEND PART ANIMATION
+    let blendPosition = document.querySelector(".blend").offsetTop;
+    let blendFirstHead = document.querySelector(".blend h1");
+    let blendSecondHead = document.querySelector(".blend h2");
+
+    if (document.documentElement.scrollTop > blendPosition-300) {
+        blendFirstHead.style.opacity = 1;
+        setTimeout(() => {
+            blendSecondHead.style.opacity = 1;
+        }, 1000);
+    }
+
 };
 
 
@@ -65,21 +89,3 @@ let coverAnimation = () => {
 }
 
 coverAnimation();
-
-
-//RECIPE PART ANIMATION
-let recipe = document.querySelector(".recipes");
-let recipesPosition = document.querySelector(".recipes").offsetTop;
-let recipesFirstHead = document.querySelector(".recipes h1");
-let recipesSecondHead = document.querySelector(".recipes h2");
-
-recipe.onwheel = () => {
-    if (document.documentElement.scrollTop > recipesPosition-300) {
-        recipesFirstHead.style.opacity = 1;
-        setTimeout(() => {
-            recipesSecondHead.style.opacity = 1;
-        }, 1000);
-    }
-}
-
-

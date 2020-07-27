@@ -94,7 +94,13 @@ header {
     font-size: 14px;
 }
 
-.nav-menu a:hover, .fab:hover {
+.nav-menu a:hover {
+    color: var(--brand-color);
+    transition: .4s;
+    text-decoration: underline;
+}
+
+.fab:hover {
     color: var(--brand-color);
     transition: .4s;
 }
@@ -292,20 +298,6 @@ header {
     line-height: 1.6;
 }
 
-.our-story a {
-    color: var(--brand-color);
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-top: 20px;
-    border-bottom: 2px solid var(--brand-color);
-    transition: .4s;
-}
-
-.our-story a:hover {
-    color: black;
-    border-bottom: 2px solid black;
-}
-
 .our-story img {
     width: 100%;
 }
@@ -347,13 +339,192 @@ header {
     transition: .5s;
 }
 
-.test {
-    height: 1000px;
+.menu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+    text-align: center;
+}
+
+.menu-left-box {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.menu-left-box img {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+}
+
+.menu-right-box {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.menu h2 {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color: var(--brand-color);
+    margin: 0;
+    font-size: 100px;
+    font-weight: 200;
+    line-height: 50px;
+}
+
+.menu h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.menu .star {
+    color: var(--brand-color);
+    margin: 20px 0;
+}
+
+.menu p {
+    color: #515151;
+    line-height: 1.6;
+}
+
+.blend {
+    width: 100%;
+    max-width: 1920px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: url("./img/blend-bg.jpg") no-repeat center fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: 12px solid white;
+    border-right: 12px solid white;
+}
+
+.blend h2 {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color: var(--brand-color);
+    margin: 0;
+    font-size: 100px;
+    font-weight: 200;
+    line-height: 50px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.blend h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+    color: white;
+    opacity: 0;
+    transition: .5s;
+}
+
+.taster {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    text-align: center;
+}
+
+.taster-left-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 30px;
+}
+
+.taster-right-box {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 30px;
+}
+
+.taster-right-box img {
+    width: 50%;
+    padding: 10px;
+}
+
+.taster h2 {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    color: var(--brand-color);
+    margin: 0;
+    font-size: 100px;
+    font-weight: 200;
+    line-height: 50px;
+}
+
+.taster h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.taster .star {
+    color: var(--brand-color);
+    margin: 20px 0;
+}
+
+.taster p {
+    color: #515151;
+    line-height: 1.6;
+}
+
+footer {
+    width: 100%;
+    background: #0a0a0a;
+    border: 12px solid white;
+    text-align: center;
+    color: white;
+}
+
+.footer-topside-header {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.footer-topside-header h1 {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.footer-topside-header .star {
+    color: var(--brand-color);
+    margin: 25px 0;
+}
+
+.footer-topside-header p {
+    line-height: 1.8;
+    letter-spacing: 1px;
 }
 
 
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 
     .header-wrap {
         flex-direction: column;
@@ -367,7 +538,7 @@ header {
     }
 
     .header-logo {
-        color: var(--brand-color)
+        color: var(--brand-color);
     }
 
     .nav-icon {
@@ -390,7 +561,7 @@ header {
     }
 
     .header-social-icons i:hover {
-        color: white;
+        color: black;
     }
 
     .main-cover {
@@ -403,6 +574,18 @@ header {
 
     .recipes {
         border: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .blend {
+        border: none;
+    }
+
+    .taster {
+        display: block;
     }
 
 }
