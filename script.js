@@ -3,13 +3,57 @@ let navIcon = document.querySelector(".nav-icon");
 let header = document.querySelector(".header-wrap");
 
 $(".nav-icon").click(() => {
-    $(".header-wrap").slideToggle();
+    $(header).slideToggle();
 
     header.style.backgroundColor = "black";
 
     navIcon.classList.contains("nav-icon-rotate")
         ? navIcon.classList.remove("nav-icon-rotate")
         : navIcon.classList.add("nav-icon-rotate")
+});
+
+
+//NAVIGATION
+$("nav a").click( function(event) {
+    event.preventDefault();
+
+    let id = $(this).attr("href");
+    let target = $(id).offset().top - 50;
+
+    $("html").animate({
+        scrollTop: target
+    }, 800);
+
+    if ($(window).innerWidth() < 900){
+        $(".header-wrap").slideToggle();
+    }
+
+    navIcon.classList.contains("nav-icon-rotate")
+        ? navIcon.classList.remove("nav-icon-rotate")
+        : navIcon.classList.add("nav-icon-rotate")
+});
+
+
+$(".main-cover i").click( () => {
+    let ourStoryPosition = $(".our-story").offset().top;
+
+    $("html").animate({
+        scrollTop: ourStoryPosition
+    }, 800);
+});
+
+
+$("footer .fa-chevron-up").click( () => {
+
+    $("html").animate({
+        scrollTop: 0
+    }, 800);
+});
+
+$(".header-logo").click( () => {
+    $("html").animate({
+        scrollTop: 0
+    }, 800);
 });
 
 
