@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Herr+Von+Muellerhoff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Herr+Von+Muellerhoff&family=Josefin+Sans:wght@300;600&display=swap');
 
 /* 
 font-family: 'Cabin', sans-serif;
 font-family: 'Herr Von Muellerhoff', cursive;
+font-family: 'Josefin Sans', sans-serif;
 */
 
 * {
@@ -608,8 +609,15 @@ footer {
 
 .footer-downside a {
     color: var(--brand-color);
+    text-transform: uppercase;
     text-decoration: none;
     transition: .5s;
+    font-weight: 300;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer-downside a span {
+    font-weight: 600;
 }
 
 .footer-downside a:hover {
